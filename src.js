@@ -12,12 +12,13 @@ const speed = {x: 0, y: 0, z: 0};
 const displacement = {x: 0, y: 0, z: 0};
 const theta = {x: 0, y: 0, z: 0};
 
-let lastTime = new Date().getTime();
+let lastAccessTime = new Date().getTime();
 
 window.addEventListener("devicemotion", event => {
     const {acceleration, rotationRate} = event;
-    const intervalSeconds = (new Date().getTime() - lastTime) / 1000;
-    lastTime = new Date().getTime();
+    
+    const intervalSeconds = (new Date().getTime() - lastAccessTime) / 1000;
+    lastAccessTime = new Date().getTime();
 
     speed.x += acceleration.x * intervalSeconds;
     speed.y += acceleration.y * intervalSeconds;
