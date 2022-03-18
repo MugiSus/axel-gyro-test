@@ -9,7 +9,7 @@ const elems = {};
 
 window.addEventListener("devicemotion", event => {
     const {acceleration} = event.acceleration;
-    elems.ax.textContent = acceleration.x.toFixed(2);
-    elems.ay.textContent = acceleration.y.toFixed(2);
-    elems.az.textContent = acceleration.z.toFixed(2);
+    elems.ax.textContent = acceleration.x.toFixed(5);
+    elems.ay.textContent = acceleration.y.toFixed(5);
+    elems.az.textContent = acceleration.z.toFixed(5);
 })
