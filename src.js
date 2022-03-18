@@ -8,8 +8,12 @@ const elems = {};
 ] = document.querySelectorAll(".values-container .values");
 
 window.addEventListener("devicemotion", event => {
-    const {acceleration} = event.acceleration;
+    console.log(event.acceleration);
+    const {acceleration, rotationRate} = event;
     elems.ax.textContent = acceleration.x.toFixed(5);
     elems.ay.textContent = acceleration.y.toFixed(5);
     elems.az.textContent = acceleration.z.toFixed(5);
+    elems.ox.textContent = rotationRate.alpha.toFixed(5);
+    elems.oy.textContent = rotationRate.beta.toFixed(5);
+    elems.oz.textContent = rotationRate.gamma.toFixed(5);
 })
