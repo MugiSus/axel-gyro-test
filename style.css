@@ -7,18 +7,18 @@ html, body{
 }
 
 .separator {
-    height: 0.8rem;
+    height: 1.5rem;
 }
 
 .values-container {
     color: #7c756f;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
 .values {
     color: #524c47;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 450;
     padding: 0rem 0.4rem;
 }
