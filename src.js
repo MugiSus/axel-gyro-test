@@ -10,7 +10,7 @@ const elems = {};
     elems.tx, elems.ty, elems.tz,
 ] = document.querySelectorAll(".values-container .values");
 
-const accelerationThreshold = 1;
+const accelerationThreshold = 0.2;
 const rotationRateThreshold = 0.8;
 
 const speed = {x: 0, y: 0, z: 0};
