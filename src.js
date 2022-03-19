@@ -20,6 +20,8 @@ window.addEventListener("devicemotion", event => {
     const intervalSeconds = (new Date().getTime() - lastAccessTime) / 1000;
     lastAccessTime = new Date().getTime();
 
+    if (intervalSeconds > 0.1) return;
+
     speed.x += acceleration.x * intervalSeconds;
     speed.y += acceleration.y * intervalSeconds;
     speed.z += acceleration.z * intervalSeconds;
