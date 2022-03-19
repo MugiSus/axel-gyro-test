@@ -25,6 +25,7 @@ window.addEventListener("devicemotion", event => {
     const intervalSeconds = (new Date().getTime() - lastAccessTime) / 1000;
     lastAccessTime = new Date().getTime();
 
+    elems.interval.innerText = intervalSeconds.toFixed(3);
     if (intervalSeconds > 0.1) return;
 
     if (Math.abs(acceleration.x) > accelerationThreshold) speed.x += acceleration.x * intervalSeconds;
@@ -39,7 +40,6 @@ window.addEventListener("devicemotion", event => {
     if (Math.abs(rotationRate.beta) >  rotationRateThreshold) theta.y += rotationRate.beta * intervalSeconds;
     if (Math.abs(rotationRate.gamma) > rotationRateThreshold) theta.z += rotationRate.gamma * intervalSeconds;
 
-    elems.interval.innerText = intervalSeconds.toFixed(3);
 
     elems.at.textContent = accelerationThreshold;
     
@@ -54,7 +54,7 @@ window.addEventListener("devicemotion", event => {
     elems.dx.textContent = displacement.x.toFixed(5);
     elems.dy.textContent = displacement.y.toFixed(5);
     elems.dz.textContent = displacement.z.toFixed(5);
-    
+
     elems.ot.textContent = rotationRateThreshold;
     
     elems.ox.textContent = rotationRate.alpha.toFixed(5);
