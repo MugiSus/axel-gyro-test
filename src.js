@@ -10,7 +10,7 @@ const elems = {};
     elems.tx, elems.ty, elems.tz,
 ] = document.querySelectorAll(".values-container .values");
 
-const accelerationThreshold = 0.2;
+const accelerationThreshold = 0.5;
 const rotationRateThreshold = 0.8;
 
 const speed = {x: 0, y: 0, z: 0};
@@ -26,6 +26,7 @@ window.addEventListener("devicemotion", event => {
     lastAccessTime = new Date().getTime();
 
     elems.interval.innerText = intervalSeconds.toFixed(3);
+
     if (intervalSeconds > 0.1) return;
 
     if (Math.abs(acceleration.x) > accelerationThreshold) speed.x += acceleration.x * intervalSeconds;
@@ -39,7 +40,6 @@ window.addEventListener("devicemotion", event => {
     if (Math.abs(rotationRate.alpha) > rotationRateThreshold) theta.x += rotationRate.alpha * intervalSeconds;
     if (Math.abs(rotationRate.beta) >  rotationRateThreshold) theta.y += rotationRate.beta * intervalSeconds;
     if (Math.abs(rotationRate.gamma) > rotationRateThreshold) theta.z += rotationRate.gamma * intervalSeconds;
-
 
     elems.at.textContent = accelerationThreshold;
     
