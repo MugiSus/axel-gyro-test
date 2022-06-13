@@ -20,10 +20,10 @@ const theta = {x: 0, y: 0, z: 0};
 let lastAccessTime = 0;
 
 window.addEventListener("devicemotion", event => {
-    const {acceleration, rotationRate} = event;
+    const {acceleration, rotationRate, timeStamp} = event;
     
-    const intervalSeconds = (event.timeStamp - lastAccessTime) / 1000;
-    lastAccessTime = event.timeStamp;
+    const intervalSeconds = (timeStamp - lastAccessTime) / 1000;
+    lastAccessTime = timeStamp;
 
     elems.interval.innerText = intervalSeconds.toFixed(3);
 
